@@ -3913,3 +3913,33 @@
 			opacity: 1;
 			visibility: visible;
 		}
+	/*mylife*/
+	.mylife_css_model{
+		max-height: 190px;
+    	overflow: hidden;
+	}
+	.mylife_css_font{
+		font-size: 0.9em;
+	}
+	.mylife_css_font i{
+		font-style: normal;
+		margin-right:3px;
+	}
+	.mylife_css_model .image img{
+		width: 70%;
+	}
+	.mylife_js_model .small{
+		float: right;
+    	margin-top: 40px;
+    	background-color: transparent;
+	}
+	.mylife_css_open{
+    	background-color: transparent;
+	}
+	.mylife_css_close{
+		display: none;
+		background-color: transparent;
+	}
+	.mylife_js_model .small:hover{
+		background-color: transparent;
+	}
