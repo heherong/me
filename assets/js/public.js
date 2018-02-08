@@ -20,3 +20,4 @@ $(function(){
 		$(this).prev().prev().hide();
 	})
 })
+//doitmyself
