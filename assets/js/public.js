@@ -20,4 +20,20 @@ $(function(){
 		$(this).prev().prev().hide();
 	})
 })
-//doitmyself
+/**
+ * doitmyself
+ */
+$(function(){
+	//鼠标移动上去显示颜色
+	$('.do_js_image').mouseenter(function(){
+		$(this).children('i').css('display','inline-block');
+	})
+	//鼠标移动上去显示颜色
+	$('.do_js_image').mouseleave(function(){
+		$(this).children('i').css('display','none');
+	})
+	
+	
+	
+	
+})

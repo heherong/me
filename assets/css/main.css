@@ -3954,14 +3954,18 @@
 		background-image: url(../../images/pic01.jpg);
 		background-repeat: no-repeat;
 		cursor: pointer;
+		background-size: cover;
 	}
-	.do_css_image i{
-		display: inline-block;
+	.do_js_image i{
+		display: none;
 	    width: 100%;
 	    height: 100%;
 	    text-align: center;
-	    background-color: rgba(0, 0, 0, 0.4);
+	    background-color: rgba(0, 0, 0, 0.5);
 	}
-	.do_css_image i em{
+	.do_js_image i em{
 	    font-style: normal;
+	    display: inline-block;
+    	margin-top: 35%;
+    	border-bottom: solid 2px #fff;
 	}
