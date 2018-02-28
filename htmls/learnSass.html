@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<pre>
 /**
      * css中也可以使用import方法，可以运用于媒体查询中
      * @import url(example.css) screen and (min-width:800px);
@@ -89,10 +97,18 @@ a{
         color:darken($linkColor,10%); 
     }
 }
-
-
-
-
+//混合器
+@mixin link-colors($normal,$hover:$normal,$visited:$normal){
+	color:$normal;
+	&:hover{color:$hover;}
+	&:visited{color:$visited;}
+}
+/**
+ * 注释：如果使用，调用：@include link-colors(red) $hover和$visited也会被自动赋值为red。
+ */
+		</pre>
+	</body>
+</html>
 
 
 
