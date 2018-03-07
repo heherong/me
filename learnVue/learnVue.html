@@ -6,20 +6,25 @@
 	</head>
 	<body>
 		<div id="app">
-			{{ message }}
+			{{ name +"1"}}
+			{{name == "wo"?"true":"false"}}
+			<button v-on:click="change">改变name值</button>
 		</div>
-		
-		
-		
-		
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 		<script>
 			var app = new Vue({
 				el:'#app',
 				data:{
-					message:'Hello Vue!'
+					name:'Hello Vue!'
+				},
+				methods:{
+					//函数
+					change:function(){
+						this.name += "1";
+					}
 				}
 			})
+			
 		</script>
 	</body>
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			[v-cloak]{
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<span v-text="name"></span>
+			<div v-html="name"></div>
+			<!--初始化完毕时，才会显示出来-->
+			<span v-cloak>{{name}}</span>
+			<hr />
+			<!--有属性，应该要用v-bind-->
+			<input type="text" v-bind:value="name" />
+			<input type="text" :value="name" />
+			
+			<a v-bind="{href:'https://www.baidu.com/'+id}">跳转</a>
+			<hr />
+			<!--把输入的值让console里面也变成-->
+			<input type="text"  v-model="name" />
+			<form action="" method="post">
+				<input type="text" id="userName" v-model="user.uname"/>
+				<input type="password" id="pwd" v-model="user.upwd"/>
+				<input type="submit" v-on:click='submit' value="注册"/>
+			</form>
+			<hr />
+			<span>使用v-for</span>
+			<ul>
+				<!--{{index}}是索引 :key="index"对象的唯一性-->
+				<!--<li v-for="(item,index) in list" :key="index">{{index}}--{{item}}</li>-->
+				<li v-for="(item,key,index) in user2">{{index}}--{{key}}--{{item}}</li>
+			</ul>
+			<hr />
+			<span>v-if和v-show</span>
+			<button v-on:click="toggle">显示隐藏切换</button>
+			<div v-if="isshow">div的值</div>
+			<div v-show="isshow">div的值</div>
+			<!--v-if和v-show都可以实现隐藏和显示，前者是添加或者移除，后面是display-->
+			
+			<hr />
+			<span>v-on的使用</span>
+			<button v-on:click="submit2">提交</button>
+			<input type="text" @keydown="keydown"/>
+			
+			<form @submit.prevent action="http://itcast.cn">
+				
+				<input type="submit" @click="submit" value="表单提交"/>
+			</form>
+			
+		</div>
+		
+		
+		
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script>  
+			var Vm = new Vue({
+				el:'#app',
+				data:{
+					name:'<h1>helloVue</h1>',
+					id:1,
+					user:{
+						uname:'',
+						upwd:''
+					},
+					list:[1,2,3,4,4],
+					user2:{
+						uname:'itcast',
+						age:10
+					},
+					isshow:true
+				},
+				methods:{
+					submit:function(){
+						alert(this.user.uname);
+					},
+					toggle:function(){
+						this.isshow = !this.isshow;
+					},
+					submit2:function(){
+						alert("ok");
+					},
+					keydown:function(){
+						alert("ok2");
+					}
+				}
+				
+			})
+			
+		</script>
+	</body>
+</html>

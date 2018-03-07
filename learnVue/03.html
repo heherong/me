@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#tb{
+				width:800px;
+				border-collapse: collapse;
+				margin:20px auto;
+			}
+			#tb th{
+				background-color: #0094ff;
+				color:#fff;
+				font-size:16px;
+				text-align: center;
+				border:solid 1px #000;
+			}
+			#tb td{
+				
+				text-align: center;
+				border:solid 1px #000;
+			}
+		</style>
+		<!--1.0版本   https://v1-cn.vuejs.org/api/#filterBy-->
+		<script src="vue1026.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+			<input type="text" v-model="id" />
+			<input type="text" v-model="pname" />
+			
+			<input type="text" placeholder="请输入筛选内容" v-model="sname"/>
+			
+			<button @click="addData">添加</button>
+			
+			<table id="tb">
+				<tr>
+					<th>编号</th>
+					<th>名称</th>
+					<th>创建时间</th>
+					<th>操作</th>
+				</tr>
+				<tr v-if="list.length == 0">
+					<td colspan="4">当前列表无数据</td>
+				</tr>
+				<tr v-for="item in list | filterBy sname in 'name'">
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.ctime}}</td>
+					<td>
+						<a href="javascript:void(0)" @click="delData(item.id)">删除</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			var Vm = new Vue({
+				el:"#app",
+				data:{
+					list:[
+						{id:1,name:"奔驰",ctime:new Date},
+						{id:2,name:"奔驰",ctime:new Date},
+						{id:3,name:"奔驰",ctime:new Date}
+					],
+					id:0,
+					pname:'',
+					sname:''
+				},
+				
+				methods:{
+					addData:function(){
+						//包装成list要求的对象
+						var p={id:this.id,name:this.pname,ctime:new Date()}
+						//将p追加到list数值中
+						this.list.push(p);
+						//清空文本框中的数据
+						this.id=0;
+						this.pname="";
+					},
+					delData:function(id){
+						if(!confirm('是否要删除数据？')){
+							return;
+						}
+						//调用list.findIndex()根据传入的ID获取这个要删除数据的索引
+						
+						var index = this.list.findIndex(function(item){
+							return item.id ==id;
+						})
+						//调用的list.splice(删除的索引，删除的元素个数)
+						this.list.splice(index,1);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
