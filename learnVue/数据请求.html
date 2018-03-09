@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue1026.js"></script>
+		<script src="vue-resource121.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{ obj | json}}
+			<button @click="getdata">get请求</button>
+			<!--post请求-->
+			<hr />
+			<button @click="getPostData">post提交数据</button>
+			<!--jsonp的请求-->
+			<hr />
+			{{obj2}}
+			<button @click="getjsonp">jsonp请求</button>
+		</div>
+		
+		
+		
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					obj:null,
+					obj2:null
+				},
+				methods:{
+					getdata:function(){
+						//请求的url
+						var url='./test.json';
+						//利用vue.resouce发出ajax请求
+						this.$http.get(url).then(function(response){
+							this.obj = response.body;
+						})//获取服务器响应回来的数据
+					},
+					getPostData:function(){
+						var url = './test.json';
+						this.$http.post(url,{name:'小狮子'},{emulateJSON:true}).then(function(respose){
+							alert(response.body.message);
+						})
+					},
+					//jsonp请求
+					getjsonp:function(){
+						this.$http.jsonp('./test.json').then(function(response){
+							this.obj2 = response.body;
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
+
+
+
+

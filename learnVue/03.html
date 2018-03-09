@@ -24,7 +24,7 @@
 		</style>
 		<!--1.0版本   https://v1-cn.vuejs.org/api/#filterBy-->
 		<script src="vue1026.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
 	</head>
 	<body>
 		<div id="app">
@@ -32,7 +32,7 @@
 			<input type="text" v-model="id" />
 			<input type="text" v-model="pname" />
 			
-			<input type="text" placeholder="请输入筛选内容" v-model="sname"/>
+			<my-red>搜索条件</my-red><input type="text" placeholder="请输入筛选内容" v-model="sname"/>
 			
 			<button @click="addData">添加</button>
 			
@@ -49,7 +49,8 @@
 				<tr v-for="item in list | filterBy sname in 'name'">
 					<td>{{item.id}}</td>
 					<td>{{item.name}}</td>
-					<td>{{item.ctime}}</td>
+					<!--如果是版本1 就空格；2的话就小卡号-->
+					<td>{{item.ctime | datafmt 'yy-mm-dd'}}</td>
 					<td>
 						<a href="javascript:void(0)" @click="delData(item.id)">删除</a>
 					</td>
@@ -60,6 +61,27 @@
 		
 		
 		<script type="text/javascript">
+			//元素指令的定义
+			Vue.elementDirective('my-red',{
+				bind:function(){
+					this.el.style.color='red';
+				}
+			})
+			//定义全局过滤器
+			Vue.filter('datafmt',function(input,formastring){
+				//年月日
+				var red="";
+				var year = input.getFullYear();
+				var month = input.getMonth()+1;
+				var day = input.getDate();
+				if(formastring=='yy-mm-dd'){
+					res = year+"-"+month+"-"+day;
+				}else{
+					res = year+"-"+month+"-"+day+' 03:06:09';
+				}
+				
+				return res;
+			});
 			var Vm = new Vue({
 				el:"#app",
 				data:{
