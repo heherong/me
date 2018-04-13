@@ -1,0 +1,12 @@
+/*登录页面*/
+.code-index-yan {
+	font-family: Arial;
+	font-style: italic;
+	font-weight: bold;
+	border: 0;
+	letter-spacing: 2px;
+	color: blue;
+}
+.login-box-body, .register-box-body{
+	border-radius: 10px;
+}
