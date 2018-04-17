@@ -10,3 +10,16 @@
 .login-box-body, .register-box-body{
 	border-radius: 10px;
 }
+/*侧边栏*/
+.sidebar-menu>li{
+	font-size:16px;
+}
+.treeview-menu{
+	padding-left: 25px;
+}
+/*首页模块*/
+.index-btn button{
+	display: inline-block;
+    width: 55px;
+    height: 30px;
+}

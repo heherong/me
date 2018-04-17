@@ -11,7 +11,7 @@
 // }
  //点击头像跳转页面
 	function ToPersonSetting(){
-		window.location.href = site_url+'/meToBack/pages/index.html';
+		window.location.href = site_url+'/me/meToBack/pages/index.html';
 	}
 	
 var UrlFull = location.href,
@@ -25,14 +25,14 @@ var site_url = UrlHead + '://' + location.host;
 var aside =  '<aside class="main-sidebar">' +
 				'<section class="sidebar">' +
 					'<div class="user-panel">' +
-					'<div class="pull-left image" onclick="ToPersonSetting()"><img src="'+site_url+'/meToBack/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"></div>' +
+					'<div class="pull-left image" onclick="ToPersonSetting()"><img src="'+site_url+'/me/meToBack/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"></div>' +
 					'<div class="pull-left info">' +
-						'<p>herong</p><a href="#"><i class="fa fa-circle text-success"></i> Online</a></div>' +
+						'<p>hr</p><a href="#"><i class="fa fa-circle text-success"></i> Online</a></div>' +
 					'</div>' +
 					//侧边栏
 					'<ul class="sidebar-menu" data-widget="tree">' +
-						'<li class="treeview">' +
-							'<a href="#">' +
+						'<li>' +
+							'<a href="'+site_url+'/me/meToBack/pages/head/indexManage.html">' +
 								'<i class="fa fa-paw"></i><span>首页管理</span>' +
 							'</a>'  +
 						'</li>' +
@@ -42,13 +42,18 @@ var aside =  '<aside class="main-sidebar">' +
 								'<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>' +
 							'</a>' +
 							'<ul class="treeview-menu">' +
-								'<li><a href="">旅游与摄影</a></li>' +
-								'<li><a href="">前端技术</a></li>' +
-								'<li><a href="">点滴生活</a></li>' +
-								'<li><a href="">书籍篇</a></li>' +
-								'<li><a href="">手工篇</a></li>' +
-								'<li><a href="">美食篇</a></li>' +
+								'<li><a href="'+site_url+'/me/meToBack/pages/model/tourist.html">旅游与摄影</a></li>' +
+								'<li><a href="'+site_url+'/me/meToBack/pages/model/technology.html">前端技术</a></li>' +
+								'<li><a href="'+site_url+'/me/meToBack/pages/model/myLife.html">点滴生活</a></li>' +
+								'<li><a href="'+site_url+'/me/meToBack/pages/model/books.html">书籍篇</a></li>' +
+								'<li><a href="'+site_url+'/me/meToBack/pages/model/doitmyself.html">手工篇</a></li>' +
+								'<li><a href="'+site_url+'/me/meToBack/pages/model/foods.html">美食篇</a></li>' +
 							'</ul>' +
+						'</li>' +
+						'<li>' +
+							'<a href="'+site_url+'/me/meToBack/pages/comment/commentManage.html">' +
+								'<i class="fa fa-paw"></i><span>评论管理</span>' +
+							'</a>'  +
 						'</li>' +
 					'</ul>' +
 				'</section>' +
@@ -69,29 +74,33 @@ var header =  '<header class="main-header">' +
 $('.wrapper').prepend(header);
 $('.wrapper').prepend(aside);
 $(function(){
-	var pagesId = GetQueryString("pages_id");
-	var modularId = GetQueryString("modular_id");
 	var url = window.location.href;
 	var str_after = url.split('pages/')[1];
 	var str_before = str_after.split('/')[0];
-	if(str_before=='information'){
-		$('.navbar-list>li').eq(0).addClass('active');
-		var nav = $('.main-sidebar>.sidebar').eq(0).show();
-		var modular = nav.find('.treeview').eq(parseInt(modularId)-1).addClass('menu-open');
+	var model_style =  ((str_after.split('/')[1]).split("?")[0]).split(".")[0];
+	
+	var nav = $('.main-sidebar>.sidebar').eq(0).show();
+	if(str_before=='head'){
+		var modular = nav.children(".sidebar-menu").children('li').eq(0).addClass('active');
+	}else if(str_before=='model'){
+		var modular = nav.children(".sidebar-menu").children('li').eq(1).addClass('menu-open');
 		var modularList = modular.find('.treeview-menu').show();
-		modularList.find('li').eq(parseInt(pagesId)-1).addClass('active');
-	}else if(str_before=='content'){
-		$('.navbar-list li').eq(1).addClass('active');
-		var nav = $('.main-sidebar>.sidebar').eq(1).show();
-		var modular = nav.find('.treeview').eq(parseInt(modularId)-1).addClass('menu-open');
-		var modularList = modular.find('.treeview-menu').show();
-		modularList.find('li').eq(parseInt(pagesId)-1).addClass('active');
-	}else if(str_before=='marketing'){
-		$('.navbar-list li').eq(2).addClass('active');
-		var nav = $('.main-sidebar>.sidebar').eq(2).show();
-		var modular = nav.find('.treeview').eq(parseInt(modularId)-1).addClass('menu-open');
-		var modularList = modular.find('.treeview-menu').show();
-		modularList.find('li').eq(parseInt(pagesId)-1).addClass('active');
+		if(model_style == "tourist"){
+			modularList.find('li').eq(0).addClass('active');
+		}else if(model_style == "technology"){
+			modularList.find('li').eq(1).addClass('active');
+		}else if(model_style == "myLife"){
+			modularList.find('li').eq(2).addClass('active');
+		}else if(model_style == "books"){
+			modularList.find('li').eq(3).addClass('active');
+		}else if(model_style == "doitmyself"){
+			modularList.find('li').eq(4).addClass('active');
+		}else if(model_style == "foods"){
+			modularList.find('li').eq(5).addClass('active');
+		}
+		
+	}else if(str_before=='comment'){
+		var modular = nav.children(".sidebar-menu").children('li').eq(2).addClass('active');
 	}
 	
 })
