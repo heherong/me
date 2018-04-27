@@ -30,6 +30,8 @@
 								</div>
 								<div class="box-body">
 									<div class="box-body table-responsive no-padding">
+										<!--添加-->
+										<button type="button" class="btn btn-block btn-success index-btn-add js-to-add">添加</button>
 										<table class="table table-hover">
 											<thead>
 												<tr>
@@ -46,7 +48,7 @@
 													<td>2018-4-17</td>
 													<td class="index-btn">
 														<button type="button" class="btn btn-success js-to-update">修改</button>
-														<button type="button" class="btn btn-success">删除</button>
+														<button type="button" class="btn btn-success js-to-del">删除</button>
 													</td>
 												</tr>
 												<tr>
@@ -55,7 +57,7 @@
 													<td>2018-4-17</td>
 													<td class="index-btn">
 														<button type="button" class="btn btn-success js-to-update">修改</button>
-														<button type="button" class="btn btn-success">删除</button>
+														<button type="button" class="btn btn-success js-to-del">删除</button>
 													</td>
 												</tr>
 												<tr>
@@ -64,7 +66,7 @@
 													<td>2018-4-17</td>
 													<td class="index-btn">
 														<button type="button" class="btn btn-success js-to-update">修改</button>
-														<button type="button" class="btn btn-success">删除</button>
+														<button type="button" class="btn btn-success js-to-del">删除</button>
 													</td>
 												</tr>
 											</tbody>
@@ -72,14 +74,41 @@
 									</div>
 								</div>
 							</div>
+							
 						</div>
 					</div>
-
+					<!--自我评价-->
+					<div class="row" style="margin:0 auto;">
+						<div class="col-md-6">
+							<div class="box box-info">
+								<div class="box-header with-border">
+									<h3 class="box-title">自我评价</h3>
+									<div class="box-tools pull-right">
+										<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+									</div>
+								</div>
+								<div class="box-body">
+									<div class="box-body">
+										<div class="form-group">
+						                    <label>填写：</label>
+						                    <textarea class="form-control" rows="5" placeholder="about me..."></textarea>
+						                </div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
 				</section>
 			</div>
 
 		</div>
-
+		<!--添加模板-->
+		<div class="js-model" style="display: none;">
+			<form id="myform" action="" method="post">
+				<textarea class="form-control js-content-text" rows="3" placeholder="内容..."></textarea>
+			</form>
+		</div>
 		<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="../../dist/js/adminlte.min.js"></script>
@@ -89,7 +118,54 @@
 		<!--时间插件-->
 		<script src="../../dist/js/laydate.js"></script>
 		<!--本页面js-->
-		<script src="../../dist/js/pages/indexManage.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//点击修改
+				$('.js-to-update').click(function(){
+					$('.js-content-text').html($($(this).parent("td").parent("tr").find("td")[1]).text());
+					//内容填充
+					var html_content = $('.js-model').html();
+					swal({
+						title: "修改内容",
+						html:true,
+						text:html_content
+					},
+					function(inputValue) {
+						if(inputValue){
+							 
+						}
+					});
+				})
+				//点击删除
+				$('.js-to-del').click(function(){
+					swal({ 
+						  title: "", 
+						  text: "确定删除吗！", 
+						  type: "warning",
+						  showCancelButton: true, 
+						  confirmButtonColor: "#DD6B55",
+						  confirmButtonText: "确定", 
+						  closeOnConfirm: false
+					});
+				})
+				//添加内容
+				$('.js-to-add').click(function() {
+					$('.js-content-text').html("");
+					//内容填充
+					var html_content = $('.js-model').html();
+					swal({
+						title: "添加内容",
+						html:true,
+						text:html_content
+					},
+					function(inputValue) {
+						if(inputValue){
+							 //保存
+						}
+					});
+				})
+			})
+		</script>
 	</body>
 
 </html>

@@ -23,3 +23,81 @@
     width: 55px;
     height: 30px;
 }
+.index-btn-add{
+	width: 140px;
+    margin-bottom: 10px;
+}
+/*旅游与摄影*/
+.tourist-list-slide{
+	margin:0 auto;
+}
+.tourist-list-time{
+	color: #909090;
+    font-size: 14px;
+    margin-left: 15px;
+}
+.tourist-list-intro{
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    color: #909090;
+}
+.tourist-list-but{
+	text-align: right;
+    margin-top: 9%;
+} 
+.tourist-list-but span{
+	width: 30px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    background: #d2d6de;
+    border-radius: 50%;
+    text-align: center;
+    margin-right:10px;
+    cursor: pointer;
+}
+/*更新tourist*/
+.update-tourist-div{
+	background-color: #fff;
+	border-radius: 10px;
+}
+.update-tourist-div>form{
+	padding:30px 0;
+}
+.update-tourist-div>form label{
+	font-size: 17px;
+    color: #333;
+    font-weight: 400;
+}
+.update-tourist-div>form label>span{
+	color:#dd4b39;
+	font-size: 16px;
+	margin-right: 5px;
+}
+.update-tourist-div .fileinput-upload-button,.update-tourist-div .kv-file-upload{
+	display: none !important;
+}
+.update-tourist-mp4 span{
+	display: inline-block;
+    cursor: pointer;
+    width: 80px;
+    height: 36px;
+    border: solid 1px #ccc;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 3px;
+    color: #333;
+}    
+.update-tourist-mp4 input{
+	opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    max-width: 80px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 100px;
+} 
