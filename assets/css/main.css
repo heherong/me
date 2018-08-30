@@ -3672,7 +3672,7 @@
 
 		#footer .copyright li {
 			border-left: solid 1px rgba(212, 212, 255, 0.1);
-			color: rgba(244, 244, 255, 0.2);
+			color: #979797;
 			display: inline-block;
 			line-height: 1;
 			margin-left: 1em;
@@ -3915,7 +3915,7 @@
 		}
 	/*mylife*/
 	.mylife_css_model{
-		max-height: 190px;
+		/*max-height: 190px;*/
     	overflow: hidden;
 	}
 	.mylife_css_font{
@@ -3976,4 +3976,7 @@
 	}
 	.tech-scan-mount h4{
 		font-weight: 100;
+	}
+	.tech-scan-mount h4 span{
+		color: #d57171;
 	}

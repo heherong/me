@@ -2,6 +2,7 @@
   * @param name  参数名 
   * by wuyi
   **/
+ //截取字段
 // function GetQueryString(name) {
 // 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
 // 	var r = window.location.search.substr(1).match(reg);
@@ -59,7 +60,7 @@ var aside =  '<aside class="main-sidebar">' +
 				'</section>' +
 			'</aside>';
 var header =  '<header class="main-header">' +
-				'<a href="./index" class="logo"><span class="logo-lg">后台管理</span></a>' +
+				'<a href="'+site_url+'/me/liubin/me/meToBack/pages/index.html" class="logo"><span class="logo-lg">后台管理</span></a>' +
 				'<nav class="navbar navbar-static-top">' +
 					'<div class="navbar-custom-menu">' +
 						'<ul class="nav navbar-nav">' +
@@ -89,7 +90,7 @@ $(function(){
 			modularList.find('li').eq(0).addClass('active');
 		}else if(model_style == "technology"){
 			modularList.find('li').eq(1).addClass('active');
-		}else if(model_style == "myLife"){
+		}else if(model_style == "myLife" || model_style == "updateMyLife"){
 			modularList.find('li').eq(2).addClass('active');
 		}else if(model_style == "books"){
 			modularList.find('li').eq(3).addClass('active');

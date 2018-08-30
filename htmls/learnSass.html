@@ -6,106 +6,106 @@
 	</head>
 	<body>
 	<pre>
-/**
-     * css中也可以使用import方法，可以运用于媒体查询中
-     * @import url(example.css) screen and (min-width:800px);
-        @import url(example.css) screen and (width:800px),(color);
-        @import url(example.css) screen and (min-device-width:500px) and (max-device-width:1024px);
-        
-        sass兼容原生的css，所以它也支持原生的CSS@import
- */
-
-
-//导入
-@import 'main';
-
-//变量
-//变量名用中划线还是下划线分隔无影响
-$fontStack: Helvertica
-$color:#333;
-//默认变量值
-$fancybox-width:400px !default;
-.fancybox{
-	width:$fancybox-width;
-}
-/**
- * 解释：在上例中，如果用户在导入你的sass局部文件之前声明了一个$fancybox-width变量，
-       那么你的局部文件中对$fancybox-width赋值400px的操作就无效。
-       如果用户没有做这样的声明，则$fancybox-width将默认为400px。
- */
-//嵌套
-body{
-    color:$color;
-    ul{
-        padding:0;
-        margin:0;
-    }
-}
-nav {
-  border: 1px solid #ccc {
-        left: 0px;
-        right: 0px;
-    }
-}
-/**
- * 嵌套中，css里面可以嵌套sass的文件 @import "文件名"
- */
-//子组合选择器
-article{
-    ~article{border-top:solid 1px #ccc;}
-    >section{background:#333;}
-    dl>{
-        dt{color:#123;}
-        dd{color:#555;}
-    }
-    nav+&{margin-top:0;}
-}
-
-//调用
-@mixin box-sizing($sizing){
-    -webkit-box-sizing:$sizing;
-    box-sizing:$sizing;   
-}
-.box-border{
-    border:solid 1px #333;
-    @include box-sizing(border-box);
-}
-
-//继承
-.message{
-    border:solid $colorpx #ccc;
-    padding:10px;
-    color:#333;
-}
-.sucess{
-    @extend .message;
-    border:solid $colorpx #444;
-}
-
-//运算
-article[role="main"] {
-  float: left;
-  width: 600px / 960px * 100%;
-}
-
-//颜色
-$linkColor:#08c;
-a{
-    text-decoration:none;
-    color:$linkColor;
-    &:hover{
-        color:darken($linkColor,10%); 
-    }
-}
-//混合器
-@mixin link-colors($normal,$hover:$normal,$visited:$normal){
-	color:$normal;
-	&:hover{color:$hover;}
-	&:visited{color:$visited;}
-}
-/**
- * 注释：如果使用，调用：@include link-colors(red) $hover和$visited也会被自动赋值为red。
- */
+		/**
+		     * css中也可以使用import方法，可以运用于媒体查询中
+		     * @import url(example.css) screen and (min-width:800px);
+		        @import url(example.css) screen and (width:800px),(color);
+		        @import url(example.css) screen and (min-device-width:500px) and (max-device-width:1024px);
+		        
+		        sass兼容原生的css，所以它也支持原生的CSS@import
+		 */
+		
+		
+		//导入
+		@import 'main';
+		
+		//变量
+		//变量名用中划线还是下划线分隔无影响
+		$fontStack: Helvertica
+		$color:#333;
+		//默认变量值
+		$fancybox-width:400px !default;
+		.fancybox{
+			width:$fancybox-width;
+		}
+		/**
+		 * 解释：在上例中，如果用户在导入你的sass局部文件之前声明了一个$fancybox-width变量，
+		       那么你的局部文件中对$fancybox-width赋值400px的操作就无效。
+		       如果用户没有做这样的声明，则$fancybox-width将默认为400px。
+		 */
+		//嵌套
+		body{
+		    color:$color;
+		    ul{
+		        padding:0;
+		        margin:0;
+		    }
+		}
+		nav {
+		  border: 1px solid #ccc {
+		        left: 0px;
+		        right: 0px;
+		    }
+		}
+		/**
+		 * 嵌套中，css里面可以嵌套sass的文件 @import "文件名"
+		 */
+		//子组合选择器
+		article{
+		    ~article{border-top:solid 1px #ccc;}
+		    >section{background:#333;}
+		    dl>{
+		        dt{color:#123;}
+		        dd{color:#555;}
+		    }
+		    nav+&{margin-top:0;}
+		}
+		
+		//调用
+		@mixin box-sizing($sizing){
+		    -webkit-box-sizing:$sizing;
+		    box-sizing:$sizing;   
+		}
+		.box-border{
+		    border:solid 1px #333;
+		    @include box-sizing(border-box);
+		}
+		
+		//继承
+		.message{
+		    border:solid $colorpx #ccc;
+		    padding:10px;
+		    color:#333;
+		}
+		.sucess{
+		    @extend .message;
+		    border:solid $colorpx #444;
+		}
+		
+		//运算
+		article[role="main"] {
+		  float: left;
+		  width: 600px / 960px * 100%;
+		}
+		
+		//颜色
+		$linkColor:#08c;
+		a{
+		    text-decoration:none;
+		    color:$linkColor;
+		    &:hover{
+		        color:darken($linkColor,10%); 
+		    }
+		}
+		//混合器
+		@mixin link-colors($normal,$hover:$normal,$visited:$normal){
+			color:$normal;
+			&:hover{color:$hover;}
+			&:visited{color:$visited;}
+		}
+		/**
+		 * 注释：如果使用，调用：@include link-colors(red) $hover和$visited也会被自动赋值为red。
+		 */
 		</pre>
 	</body>
 </html>

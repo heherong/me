@@ -1,0 +1,252 @@
+/*页面公共样式*/
+/*books*/
+.books_worksName{
+	font-size:15px;
+	margin-left:15px;
+}
+i.back_heart5{
+	display: inline-block;
+    width: 125px;
+    height:20px;
+    background-image: url(../../images/heart.png);
+    background-size: 25px 20px;
+    background-repeat: repeat-x;
+    position: relative;
+    top: 6px;
+    left: 8px;
+}
+i.back_heart4{
+	display: inline-block;
+    width: 100px;
+    height:20px;
+    background-image: url(../../images/heart.png);
+    background-size: 25px 20px;
+    background-repeat: repeat-x;
+    position: relative;
+    top: 6px;
+    left: 8px;
+}
+i.back_heart3{
+	display: inline-block;
+    width: 75px;
+    height:20px;
+    background-image: url(../../images/heart.png);
+    background-size: 25px 20px;
+    background-repeat: repeat-x;
+    position: relative;
+    top: 6px;
+    left: 8px;
+}
+i.back_heart2{
+	display: inline-block;
+    width: 50px;
+    height:20px;
+    background-image: url(../../images/heart.png);
+    background-size: 25px 20px;
+    background-repeat: repeat-x;
+    position: relative;
+    top: 6px;
+    left: 8px;
+}
+i.back_heart1{
+	display: inline-block;
+    width: 25px;
+    height:20px;
+    background-image: url(../../images/heart.png);
+    background-size: 25px 20px;
+    background-repeat: repeat-x;
+    position: relative;
+    top: 6px;
+    left: 8px;
+}
+/*photosDetail*/
+.photo_detail_textarea{
+    font-size: 16px;
+}
+.photo_detail_comment.emoticons{
+	padding: 2em 0 2em 0;
+    margin: 0 auto;
+    max-width: 65em;
+    width: calc(100% - 6em);
+}
+.photo_detail_comment p{
+	margin:0;
+}
+.photo_detail_comment span label{
+	display: inline-block;
+	font-size:15px;
+}
+.photo_detail_comment span input{
+	display: inline-block;
+    border: solid 1px #ccc;
+    width: 165px;
+    height: 34px;
+    font-size: 15px;
+    color: #fff;
+}
+.photo_detail_comment button{
+	width: 102px;
+    height: 40px;
+    line-height: 42px;
+    position: relative;
+    top: -13px;
+    left: 5%;
+}
+.photo_detail_comment.emoticons .result{
+	padding: 10px 15px;
+    border: 1px solid #4f4c4c;
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 110px;
+    line-height: 24px;
+    width: 50%;
+    font-size: 15px;
+    overflow-y: auto;
+}
+.photo_detail_p{
+	position: relative;
+    top: 10px;
+}
+.photo_detail_p span:first-child{
+	margin-right: 10px;
+    color: #7ac0d8;
+    font-weight: 600;
+}
+p.photo_detail_face{
+	border-bottom: 1px dotted #dbdbdb;
+    margin: -15px 0 30px 0;
+    padding-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*表情*/
+.emoticons{
+	width: 525px;
+	margin-bottom:20px;
+}
+.emoticons .publisher{
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	/*border-bottom: 1px dotted #dbdbdb;*/
+}
+.emoticons .publisher textarea{
+	/*width: 500px;
+	height: 140px;
+	padding: 5px 10px;
+	border: 1px solid #dbdbdb;
+	resize: none;*/
+	width: 50%;
+    height: 100px;
+    padding: 5px 10px;
+    border: 1px solid #dbdbdb;
+    resize: none;
+    display: inline-block;
+}
+.emoticons .publisher .trigger{
+	font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+.emoticons .publisher .trigger-active{
+	color: #eb7350;
+}
+.emoticons .result{
+	padding: 10px 15px;
+	border: 1px dotted #dbdbdb;
+	margin-top: 10px;
+	height: 150px;
+	line-height: 24px;
+}
+.emoticons .result img{
+	vertical-align: middle;
+}
+
+.widget-layer{
+	position: relative;
+	width: 410px;
+	margin-top: 8px;
+	background: #fff;
+	border: 1px solid #dbdbdb;
+	border-radius: 2px;
+}
+.widget-layer:before{
+	position: absolute;
+	top: -16px;
+	left: 2px;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-bottom-color: #dbdbdb;
+}
+.widget-layer:after{
+	position: absolute;
+	top: -15px;
+	left: 2px;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-bottom-color: #ddd;
+}
+.widget-layer .widget-tool{
+	height: 28px;
+	background: #ddd;
+}
+.widget-layer .widget-close{
+	float: right;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-family: Arial;
+	font-size: 14px;
+    text-decoration: none;
+    color: #333;
+}
+.widget-layer ul{
+	width: 372px;
+	margin: 0 auto;
+	padding: 15px 5px 20px;
+	overflow: hidden;
+	list-style: none;
+}
+.widget-layer li{
+	position: relative;
+    z-index: 8;
+    float: left;
+    width: 31px;
+    height: 31px;
+    padding: 4px;
+    margin-left: -1px;
+    margin-top: -1px;
+    border: 1px solid #e8e8e8;
+    cursor: pointer;
+}
+.widget-layer li img{
+	position: relative;
+    top: -5px;
+}
+.widget-layer li:hover{
+	z-index: 9;
+	border-color: #eb7350;
+}

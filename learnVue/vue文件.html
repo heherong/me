@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<pre>
+			！！{{注意：我在用vue+webpack打包时，报出了一系列的错误，最蠢也是最直接的就是删除webpack重新安装，如果删不掉就找到全局安装的地址一般是在c盘下面，删除module}}
+			npm install style-loader -D 的-D和 --save -dev 一样
+			"css-loader": "^1.0.0",
+		    "file-loader": "^1.1.11",
+		    "jquery": "^3.3.1",  //引用的时候直接require('jquery')
+		    "style-loader": "^0.22.1", //引用的时候在对应路径中配置css即可
+		    "url-loader": "^1.1.0",
+		    "webpack": "^4.16.5"
+		    "scripts": {
+			    "dev": "webpack-dev-server --inline --hot --open --port "
+			  },
+			  --inline  自动刷新
+			  --hot 热加载
+			  --port 指定监听端口号为 5200
+			  --open 自动在默认浏览器加载
+			  --host:可以指定服务器的ip 不指定默认为127.0.0.1（可以指定为自己电脑ip，然后其他人便可以访问）
+			！！
+			启动npm run dev的时候会报webpack-cli的错，需要重新-g全局下载，然后将webpack和webpack-li在-D中下载一下就好了
+			
+			1.webpack安装 
+			npm install --save-dev webpack -g
+			npm install --save-dev webpack-cli -g
+			
+			2. .vue文件的学习
+			第一步：cnpm install vue-loader vue-template-compiler 
+					babel-plugin-transform-runtime --save-dev
+				  npm install vue --save
+				  (--save是安装在dependencies下面的，是运行环境要安装的包；-save-devdevDependencies是开发环境要安装的包)
+			第二步：在webpack.config.js中添加babel（webpack4中使用）
+				{
+					test: /\.(jsx|js)$/,
+					use: [{
+						loader: "babel-loader",
+						options: {
+							presets: ['es2015', 'react']
+						}
+					}],
+					exclude: /node_modules/
+				},
+			第三步：在webpack.config.js中添加
+				{
+					test: /\.vue$/, //解析 .vue组件页面文件
+					loader: 'vue-loader' //
+				},
+			
+			3. 将.vue中的内容解析编译并且展示在浏览器中
+			  第一步：npm install vue --save
+			  第二步：在main.js中编写解析.vue代码
+			  (--//1. 导入vue核心包
+				import vue from 'vue';
+				
+				//2. 导入App.vue的vue对象
+				import App from './App.vue';
+				
+				//3. 利用vue对象进行解析渲染
+				new Vue({
+					el:'#app',
+				//	render:function(create){create(App)}  es5的写法
+					render:c=>c(App)   //es6写法
+				})--)
+			 第三步：需要在index1.html中写初始化页面
+			 第四步：启动 npm run dev  
+			 (其中遇到问题：报loader的错，因为webpack4中的配置文件有些不一样，所以将webpack.config.js中的配置改一下即可)
+			 
+			 <!--安装es6-->
+			 "babel-core": "^6.24.0",
+		    "babel-loader": "^6.4.1",
+		    "babel-plugin-transform-runtime": "^6.23.0",
+		    "babel-preset-es2015": "^6.24.0",
+		    <span style="color:darkred;">出现bug:Refusing to install xxx as a dependency of itself</span>
+		  	  出现这个错误的最大可能原因是你安装的这个依赖包和你的项目名字有冲突，请修改项目名称。
+		  	  
+		  	<span style="color:darkred;">出现bug:安装vue-loader之后还要配置其他内容</span>
+		    <a href="https://blog.csdn.net/cominglately/article/details/80555210">https://blog.csdn.net/cominglately/article/details/80555210</a>
+		    const VueLoaderPlugin = require('vue-loader/lib/plugin');
+		    new VueLoaderPlugin()
+		    
+		  	<span style="color:darkred;">出现bug:The 'mode' option has not been set</span>
+		           设置开发环境
+		    https://blog.csdn.net/you23hai45/article/details/80542971
+		          在webpack.config.js 中配置module.exports = {
+				mode: 'development',即可
+		   
+		    4、vue-router实现单页面使用
+		    npm install vue-router --save
+		          然后在main.js中配置
+		    
+		    {===//将vue-router集成到这个项目中来
+			import vueRouter from 'vue-router';
+			//将vue-router绑定到vue对象上
+			Vue.use(vueRouter);
+			
+			//定义组件对象    components
+			import login from './components/account/login.vue';
+			import register from './components/account/register.vue';
+			
+			var router1 = new vueRouter({
+				routes:[
+					{path:'/login',component:login},
+					{path:'/register',component:register}
+				]
+			})===}
+			设置对应的vue文件，然后在App.vue中导入
+			<router-link to="/login">登录</router-link>
+			<router-link to="/register">注册</router-link>
+			
+			<!--路由占位符-->
+			<router-view></router-view>
+			
+			5.开启项目制作：
+			移动端：支持vue2的UI框架   mint-ui,muse-ui,SUI,
+			PC端：饿了么团队的：element ， iview
+			现在用 mint-ui   参考http://mint-ui.github.io/#!/zh-cn
+			
+			6.使用mui框架
+				下载mui，其中的dist中的文件都可以copy下来，放到项目的statics(也就是放置js,css的地方；其中css文件里面有关url的单引号要变成双引号，webpack才可以打包)
+			
+			
+			
+			
+			
+			
+		</pre>		
+		
+		
+	</body>
+</html>

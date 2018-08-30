@@ -1,134 +1,271 @@
 <!DOCTYPE HTML>
-<!--
-	Forty by HTML5
-	jq22.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (jq22.net/license)
--->
 <html>
 	<head>
 		<title>手工</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!--网页标题左侧显示-->
         <link rel="icon" href="../images/me.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--相册样式-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/style1.css" />
+		<!--自定义样式-->
+		<link rel="stylesheet" href="../assets/css/publicHtmls.css" />
+		<style type="text/css">
+			.img-wrap{
+				border-bottom: none;
+			}
+			.description--grid{
+				display: none;
+			}
+			.inner {
+			    padding: 4em 0 2em 0;
+			    margin: 0 auto;
+			    max-width: 65em;
+			    width: calc(100% - 6em);
+			}
+			/*写图片评论*/
+			@media screen and (min-width: 640px) {
+			    .preview--open .description--preview{
+					max-width: 520px;
+				    left: 60%;
+				    border: solid 1px #fff;
+				    border-radius: 10px;
+				    top: 15%;
+				    bottom: 5%;
+				    overflow-y:auto ;
+				    padding: 15px;
+				}
+				.preview--open .original{
+					left: -15%;
+				}
+			}
+			.emoticons{
+				width: 100%;
+    			margin: 0;
+			}
+			.emoticons .publisher{
+				padding: 0;
+   				margin: 0;
+			}
+			.publisher label{
+				display: inline-block;
+    			font-size: 11px;
+			}
+			.publisher input{
+				height: 25px;
+			    display: inline-block;
+			    width: 20%;
+			    border: solid 1px #ccc;
+			    font-size: 14px;
+			}
+			.publisher p{
+			    text-align: left;
+			    margin: 0 0 0 12%;
+			}
+			.emoticons .publisher textarea{
+				width: 60%;
+			    height: 80px;
+			    font-size: 14px;
+			}
+			.emoticons button{
+			    padding: 0;
+			    margin: 0;
+			    width: 70px;
+			    height: 35px;
+			    line-height: 36px;
+			    position: relative;
+			    left: 10px;
+			    top: -12px;
+			}
+			.emoticons .result{
+				padding: 5px 10px; 
+			    border: 1px dotted #7b7878;
+			    margin-top: 0px; 
+			    height: auto; 
+			    line-height: none;
+			    border-radius: 5px;
+			    text-align: left;
+			    font-size: 14px;
+			}
+			.publisher p.photo_detail_p{
+				margin: 0;
+    			top: 5px;
+			}
+		</style>
 	</head>
 	<body>
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<a href="../index.html" class="logo"><strong>何蓉</strong> <span>herong</span></a>
-						<nav>
-							<a href="#menu">菜单</a>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="../index.html">首页</a></li>
-							<li><a href="photos.html">旅游与摄影</a></li>
-							<li><a href="technology.html">前端技术</a></li>
-							<li><a href="mylife.html">点滴生活</a></li>
-							<li><a href="books.html">书籍</a></li>
-							<li><a href="doitmyself.html">手工</a></li>
-							<li><a href="foods.html">美食篇</a></li>
-						</ul>
-						<ul class="actions vertical">
-							<li><a href="javascript:void(0)" class="button special fit">返回</a></li>
-							
-						</ul>
-					</nav>
-
-				<!-- Main -->
-				<div class="6u$ 12u$(medium) do_css_main">
-					<div class="box alt">
-						<div class="row 50% uniform do_js_animate">
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image" style="background-image:url(../images/doitmyself/xiuhua.jpg);background-position: 0px -76px;">
-									<i><em>绣花--香槟玫瑰</em></i>
-								</span>
+		<div id="wrapper">
+			<div class="inner">
+				<header class="major">
+					<h1 style="color: #91a9e0;">手工</h1>
+				</header>
+				<p style="font-size: 16px;color: #c6d2ee;">手工是一件很有意思的事情，利用不需要的东西，变废为宝；你可以发挥你自己的想象，变成任何你想要的宝物~</p>
+				<!--<div class="box alt">-->
+					<div class="content">
+						<div class="grid">
+							<div class="grid__item" data-size="1280x853"> <a href="../images/doitmyself/xiuhua.jpg" class="img-wrap"><img src="../images/doitmyself/xiuhua.jpg" alt="img1" />
+								<div class="description description--grid">1</div>
+								</a> </div>
+							<div class="grid__item" data-size="958x1280"> <a href="../images/doitmyself/tree.jpg" class="img-wrap"><img src="../images/doitmyself/tree.jpg" alt="img2" />
+								<div class="description description--grid">2</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x853"> <a href="../images/doitmyself/vase.jpg" class="img-wrap"><img src="../images/doitmyself/vase.jpg" alt="img3" />
+								<div class="description description--grid">3</div>
+								</a> </div>
+							<div class="grid__item" data-size="865x1280"> <a href="../images/doitmyself/pot.jpg" class="img-wrap"><img src="../images/doitmyself/pot.jpg" alt="img4" />
+								<div class="description description--grid">4</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x1280"> <a href="../images/doitmyself/jelly.jpg" class="img-wrap"><img src="../images/doitmyself/jelly.jpg" alt="img5" />
+								<div class="description description--grid">5</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="../images/doitmyself/xiuhua.jpg" class="img-wrap"><img src="../images/doitmyself/xiuhua.jpg" alt="img6" />
+								<div class="description description--grid">6</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="../images/doitmyself/vase.jpg" class="img-wrap"><img src="../images/doitmyself/vase.jpg" alt="img7" />
+								<div class="description description--grid">7</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/2.png" class="img-wrap"><img src="images/weix/2.png" alt="img8" />
+								<div class="description description--grid">8</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="../images/doitmyself/bowknot.jpg" class="img-wrap"><img src="../images/doitmyself/bowknot.jpg" alt="img9" />
+								<div class="description description--grid">9</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/1.png" class="img-wrap"><img src="images/weix/1.png" alt="img10" />
+								<div class="description description--grid">10</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/2.png" class="img-wrap"><img src="images/weix/2.png" alt="img11" />
+								<div class="description description--grid">11</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/3.png" class="img-wrap"><img src="images/weix/3.png" alt="img12" />
+								<div class="description description--grid">12</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/4.png" class="img-wrap"><img src="images/weix/4.png" alt="img13" />
+								<div class="description description--grid">13</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/5.png" class="img-wrap"><img src="images/weix/5.png" alt="img14" />
+								<div class="description description--grid">14</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/6.png" class="img-wrap"><img src="images/weix/6.png" alt="img15" />
+								<div class="description description--grid">15</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/7.png" class="img-wrap"><img src="images/weix/7.png" alt="img16" />
+								<div class="description description--grid">16</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/8.png" class="img-wrap"><img src="images/weix/8.png" alt="img17" />
+								<div class="description description--grid">17</div>
+								</a> </div>
+							<div class="grid__item" data-size="1280x850"> <a href="images/weix/9.png" class="img-wrap"><img src="images/weix/9.png" alt="img18" />
+								<div class="description description--grid">
+									18
+								</div>
+								</a> </div>
+						</div>
+						<!-- /grid -->
+						<div class="preview">
+							<button class="action action--close"><i>x</i><span class="text-hidden">Close</span></button>
+							<div class="description description--preview">
 							</div>
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image" style="background-image:url(../images/doitmyself/tree.jpg);background-position: 0px -76px;">
-									<i><em>圣诞树</em></i>
+						</div>
+						<!-- /preview -->
+					</div>
+					<!--表情评论-->
+					<div class="js_commit" style="display: none;">
+						<div class="emoticons  js_photo_detail">
+							<div class="publisher">
+								<p style="color: #91a9e0;">标题标题标题标题标题标题</p>
+								<span>
+									<label for=""><i>*</i>姓名</label>
+									<input type="text" name="" id="" value="" placeholder="请填写姓名" class='js_name'/>
 								</span>
-							</div>
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image" style="background-image:url(../images/doitmyself/vase.jpg);background-position: 0px -76px;">
-									<i><em>花瓶</em></i>
-								</span>
-							</div>
-							<!-- Break -->
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image" style="background-image:url(../images/doitmyself/pot.jpg);background-position: 0px -76px;">
-									<i><em>笔筒</em></i>
-								</span>
-							</div>
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image" style="background-image:url(../images/doitmyself/jelly.jpg);background-position: 0px -76px;">
-									<i><em>果冻</em></i>
-								</span>
-							</div>
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image" style="background-image:url(../images/doitmyself/bowknot.jpg);background-position: 0px -76px;">
-									<i><em>蝴蝶结</em></i>
-								</span>
-							</div>
-							<!-- Break -->
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image">
-									<i><em>...</em></i>
-								</span>
-							</div>
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image">
-									<i><em>...</em></i>
-								</span>
-							</div>
-							<div class="4u">
-								<span class="image fit do_css_image do_js_image">
-									<i><em>...</em></i>
-								</span>
+								<span>
+									<label for=""><i>*</i>联系电话/邮箱</label>
+									<input type="text" name="" id="" value="" class="js_relation" style="width:40%;"/>
+								</span><br />
+								
+								<p>
+									<textarea name="content" class="photo_detail_textarea" placeholder="请开始你的表演..."></textarea>
+									<button  class="js_to_commit">发表</button>
+								</p>
+								<div class="result">123 <p class="photo_detail_p"><span>吴先生</span><span>2018-07-02</span></p></div>
 							</div>
 						</div>
 					</div>
+					<!--表情评论-->
+					
+				<!--浏览次数-->
+				<div class="tech-scan-mount js-scan-mount">
+					<h4>浏览次数：<span>5</span></h4>
 				</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<!--<ul class="icons">
-								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							</ul>-->
-							<ul class="copyright">
-								<li>来自： <a href="https://weibo.com/5496821501/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1">@何蓉丫</a></li>
-								
-							</ul>
-						</div>
-					</footer>
-
 			</div>
-
+			
+		</div>
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../assets/js/jquery.scrollex.min.js"></script>
-			<script src="../assets/js/skel.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="../assets/js/main.js"></script>
-			<script src="../assets/js/public.js"></script>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/skel.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/public.js"></script>
+		<!--公共js-->
+		<script src="../assets/js/header.js"></script>
+		<!--图片插件-->
+		<script src="../assets/js/picture/modernizr-custom.js"></script>
+		<script src="../assets/js/picture/imagesloaded.pkgd.min.js"></script>
+		<script src="../assets/js/picture/masonry.pkgd.min.js"></script>
+		<script src="../assets/js/picture/classie.js"></script>
+		<script src="../assets/js/picture/main.js"></script>
+		<!--评论表情js-->
+		<script type="text/javascript" src="../assets/js/jquery.emoticons.js"></script>
+		<script type="text/javascript">
+			//图片插件
+			(function() {
+				// create SVG circle overlay and append it to the preview element
+				function createCircleOverlay(previewEl) {
+					var dummy = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+					dummy.setAttributeNS(null, 'version', '1.1');
+					dummy.setAttributeNS(null, 'width', '100%');
+					dummy.setAttributeNS(null, 'height', '100%');
+					dummy.setAttributeNS(null, 'class', 'overlay');
+					var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+					var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+					circle.setAttributeNS(null, 'cx', 0);
+					circle.setAttributeNS(null, 'cy', 0);
+					circle.setAttributeNS(null, 'r', Math.sqrt(Math.pow(previewEl.offsetWidth,2) + Math.pow(previewEl.offsetHeight,2)));
+					dummy.appendChild(g);
+					g.appendChild(circle);
+					previewEl.appendChild(dummy);
+				}
+				
+				new GridFx(document.querySelector('.grid'), {
+					onInit : function(instance) {
+						createCircleOverlay(instance.previewEl);
+					},
+					onResize : function(instance) {
+						instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+					},
+					onOpenItem : function(instance, item) {
+						// item's image
+						var gridImg = item.querySelector('img'),
+							gridImgOffset = gridImg.getBoundingClientRect(),
+							win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+							SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+							SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+							
+						SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+						// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+						if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+							SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+						}
+						else {
+							SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+						}
+					}
+				});
+			})();
+		</script>
 	</body>
 </html>
